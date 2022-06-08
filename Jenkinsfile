@@ -12,9 +12,9 @@ pipeline {
         }
       }
     }
-    stage ('Build'){
+    stage ('Compile'){
       steps {
-        echo "Build step..."
+        echo "Compile step..."
       }
     }
     stage ('Deploy'){
