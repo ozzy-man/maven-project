@@ -17,9 +17,12 @@ pipeline {
         build job: 'deploy_to_staging'
       }
     }
-    stage ('Deploy'){
+    stage ('Deploy to prod'){
       steps {
-        echo "Deploy step..."
+        timeout(time:5, unit:'DAYS') {
+          input message:'Approve Prod deployment?'
+        }
+        build job: 'deploy_to_prod'
       }
     }
   }
