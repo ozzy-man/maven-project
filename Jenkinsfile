@@ -19,12 +19,12 @@ pipeline {
       parallel {
         stage ('Deploy to Staging'){
           steps {
-            bat 'copy **/target/*.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\"'
+            bat 'copy **/target/*.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps"'
           }
         }
         stage ('Deploy to prod'){
           steps {
-            bat 'copy **/target/*.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Product\\webapps\\"'
+            bat 'copy **/target/*.war "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0_Product\\webapps"'
           }
         }
       }
