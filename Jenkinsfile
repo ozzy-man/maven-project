@@ -24,10 +24,7 @@ pipeline {
         }
         stage ('Deploy to prod'){
           steps {
-            timeout(time:5, unit:'DAYS') {
-            input message:'Approve Prod deployment?'
-          }
-          bat 'copy **/target/*.war "C:\Program Files\Apache Software Foundation\Tomcat 9.0_Product\webapps\"'
+            bat 'copy **/target/*.war "C:\Program Files\Apache Software Foundation\Tomcat 9.0_Product\webapps\"'
           }
         }
       }
